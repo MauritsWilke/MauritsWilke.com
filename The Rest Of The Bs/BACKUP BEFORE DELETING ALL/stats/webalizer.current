@@ -1,0 +1,205 @@
+# Webalizer V2.23-08 Incremental Data - 02/15/2021 06:43:30
+2021 2 15 6 43 30
+116 105 11 9 11 5 257527 56 28 0
+2 11 44 4 15
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+64 53 118955 10 29 9
+1 1 4588 1 1 1
+0 0 0 0 0 0
+0 0 0 0 0 0
+4 4 7027 2 3 2
+4 4 11615 2 4 3
+3 3 6168 3 2 2
+5 5 19977 1 3 1
+5 5 11615 3 4 4
+3 3 9176 2 2 2
+0 0 0 0 0 0
+27 27 68406 2 8 4
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+3 3 6168 2
+0 0 0 0
+0 0 0 0
+44 33 39047 17
+11 11 34888 6
+11 11 43250 5
+11 11 14833 1
+0 0 0 0
+21 21 84496 13
+0 0 0 0
+4 4 7027 3
+2 2 4588 1
+0 0 0 0
+1 1 4588 1
+3 3 7027 3
+0 0 0 0
+0 0 0 0
+0 0 0 0
+2 2 4588 1
+1 1 4588 1
+2 2 2439 2
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0
+0
+0
+105
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+6
+0
+0
+0
+0
+0
+0
+5
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+# -urls- 
+/SadBoisIncLogo_latte.png
+1 1 0 10245 0 0
+/helo.jpg
+1 3 0 15252 0 0
+/projects.css
+0 3 0 0 0 0
+/favicon.ico
+0 34 0 0 0 0
+/
+0 48 0 122142 27 17
+/projects.js
+0 3 0 156 0 0
+/robots.txt
+0 8 0 0 0 0
+/projects.html
+0 3 0 1797 1 1
+/SadBoisIncLogo.png
+1 8 0 103600 0 0
+# End Of Table - urls
+# -sites- (monthly)
+66.249.75.199
+0 5 5 19977 1 1612427746
+/
+66.249.75.220
+0 1 1 0 0 0
+-
+54.208.201.249
+0 1 1 4588 1 1613362330
+/
+66.249.75.218
+0 4 4 19977 1 1612427729
+/
+66.249.72.172
+0 9 9 24658 6 1613125789
+/
+66.249.72.174
+0 8 8 21650 6 1613216356
+/
+83.85.113.164
+0 74 63 118254 5 1613370389
+/
+66.249.72.166
+0 2 2 4588 1 1612427669
+/
+66.249.93.108
+0 1 1 4588 1 1612409485
+/
+66.249.72.170
+0 8 8 23858 5 1613243653
+/
+66.249.72.168
+0 3 3 15389 1 1612427672
+/
+# End Of Table - sites (monthly)
+# -sites- (daily)
+54.208.201.249
+0 1 1 4588 1 1613362330
+/
+83.85.113.164
+0 26 26 63818 3 1613370389
+/
+# End Of Table - sites (daily)
+# -referrers- 
+https://sadboisinc.co/index.css
+1 1
+https://www.sadboisinc.co/
+1 2
+http://sadboisinc.co/projects.html
+1 9
+http://www.sadboisinc.co/index.css
+1 1
+https://www.sadboisinc.co/index.css
+1 1
+- (Direct Request)
+0 27
+http://www.sadboisinc.co/
+1 2
+http://sadboisinc.co/index.css
+1 5
+http://sadboisinc.co/index.html
+1 13
+http://sadboisinc.co/
+1 53
+https://sadboisinc.co/
+1 2
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0
+0 86
+Netscape 6 compatible
+2 86
+Google-AdSense-Check
+0 1
+Mediapartners-Google
+0 16
+Googlebot/2.1
+0 12
+Who.is Bot
+0 1
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

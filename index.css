@@ -1,0 +1,72 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index:0;
+}
+
+#card {
+    height: 2in;
+    width: 3.5in;
+    padding: 10px;
+
+    background-color: rgba(153, 170, 181, 0.8);
+    border-radius: 7px;
+
+    text-align: center;
+    font-family: 'Cutive Mono', monospace;
+}
+
+
+#card h1{
+    font-size: 250%;
+}
+
+#card p{
+    font-size: 150%;
+}
+
+.fab {
+    padding-top: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 30px;
+    width: 50px;
+    text-align: end;
+    text-decoration: none;
+    margin: 5px 2px;
+    transition: 1s;
+}
+
+.fab:hover {
+    opacity: 0.7;
+}
+
+.fa-github {
+    color: black;
+    font-size: 36px;
+}
+
+.fa-google {
+    color: black;
+    font-size: 36px;
+}
+
+.fa-discord {
+    color: black;
+    font-size: 36px;
+}
+
+#canvas1{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:-1;
+    background: radial-gradient(#2c2f33, #23272a);
+}

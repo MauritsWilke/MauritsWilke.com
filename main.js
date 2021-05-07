@@ -4,6 +4,9 @@
 //This gets the cavnas from index.html 
 const canvas  = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
+//Should fix bad VH
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 //This sets the canvas to the current window size
 canvas.width  = document.documentElement.clientWidth;

@@ -1,3 +1,8 @@
+:root {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -5,8 +10,11 @@
 
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
     align-items: center;
+    align-content: center;
     height: 100vh;
     z-index:0;
 }
@@ -33,9 +41,11 @@
 }
 
 .fab {
-    padding-top: 15%;
+    position: relative;
+    padding-top: 8vh;
     padding-left: 7%;
     padding-right: 7%;
+
     font-size: 30px;
     width: 50px;
     text-align: end;

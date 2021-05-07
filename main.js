@@ -4,9 +4,6 @@
 //This gets the cavnas from index.html 
 const canvas  = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
-//Should fix bad VH
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 //This sets the canvas to the current window size
 canvas.width  = document.documentElement.clientWidth;
@@ -186,3 +183,13 @@ init();
 animate();
 
 //If you have any questions about why I did something or if you have suggestions, feel free to contract me!
+
+
+//This should fix ios viewheight because ew
+const setVh = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+  
+  window.addEventListener('load', setVh);
+  window.addEventListener('resize', setVh);

@@ -41,8 +41,7 @@
 }
 
 .fab {
-    position: relative;
-    padding-top: 8vh;
+    padding-top: 6vh;
     padding-left: 7%;
     padding-right: 7%;
 
@@ -80,3 +79,9 @@
     z-index:-1;
     background: radial-gradient(#2c2f33, #23272a);
 }
+
+@media only screen and (max-width: 768px) {
+    .fab {
+        padding-top: 5vh;
+    }
+  }

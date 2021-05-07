@@ -24,6 +24,7 @@
 
     text-align: center;
     font-family: 'Cutive Mono', monospace;
+    overflow: visible;
 }
 
 
@@ -35,11 +36,22 @@
     font-size: 150%;
 }
 
-.fab {
-    padding-top: 6vh;
-    padding-left: 7%;
-    padding-right: 7%;
+#socials {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5.5vh;
+}
 
+.fab {
+    font-size: 30px;
+    width: 50px;
+    text-align: end;
+    text-decoration: none;
+    margin: 5px 2px;
+    transition: 1s;
+}
+
+.fas {
     font-size: 30px;
     width: 50px;
     text-align: end;
@@ -49,6 +61,10 @@
 }
 
 .fab:hover {
+    opacity: 0.7;
+}
+
+.fas:hover {
     opacity: 0.7;
 }
 
@@ -67,6 +83,16 @@
     font-size: 36px;
 }
 
+.fa-cat {
+    color: black;
+    font-size: 36px;
+}
+
+.fa-phone {
+    color: black;
+    font-size: 36px;
+}
+
 #canvas1{
     position:absolute;
     left:0;
@@ -77,6 +103,9 @@
 
 @media only screen and (max-width: 768px) {
     .fab {
+        padding-top: 0.2in;
+    }
+    .fas {
         padding-top: 0.2in;
     }
   }

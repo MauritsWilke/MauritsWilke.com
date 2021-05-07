@@ -109,6 +109,6 @@
         padding-top: 0.2in;
     }
     #socials {
-        margin-top: calc(var(--vh, 1vh) * 5.5);
+        margin-top: 5.5vh;
     }
   }

@@ -108,4 +108,7 @@
     .fas {
         padding-top: 0.2in;
     }
+    #socials {
+        margin-top: calc(5.5vh - calc(5.5vh - 5.5%));
+    }
   }

@@ -15,7 +15,7 @@ let mouseDivider = 100; //Increase this to shrink the mouse radius
 let connectDivider = 7; //Increase this to shrink the minimum distance or a line
 let particleDivider = 9000; //Decrease this to get more particles, change at your own risk of lagging your device :)
 let minimumParticleSize = 1;
-let particleSpeed = 5;
+let particleSpeed = 2;
 let mouse = {
     x: null,
     y: null,

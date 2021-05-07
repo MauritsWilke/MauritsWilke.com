@@ -8,9 +8,6 @@ const ctx = canvas.getContext('2d');
 //This sets the canvas to the current window size
 canvas.width  = document.documentElement.clientWidth;
 canvas.height = document.documentElement.clientHeight;
-//This part here fixes the weird viewport height for mobile
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 //Variables
 let particlesArray;
@@ -176,8 +173,6 @@ window.addEventListener('resize',
         canvas.width = innerWidth;
         canvas.height = innerHeight;
         mouse.radius = (canvas.height/mouseDivider) * (canvas.width/mouseDivider);
-        vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
         //Calling init() again to regenerate all particles
         init();
     }

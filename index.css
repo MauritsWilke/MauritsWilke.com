@@ -1,114 +1,113 @@
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    height: 100vh;
-    z-index:0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+  z-index: 0;
 }
 
 #card {
-    height: 2in;
-    width: 3.5in;
-    padding: 10px;
+  height: 2in;
+  width: 3.5in;
+  padding: 10px;
 
-    background-color: rgba(153, 170, 181, 0.8);
-    border-radius: 7px;
+  background-color: rgba(153, 170, 181, 0.8);
+  border-radius: 7px;
 
-    text-align: center;
-    font-family: 'Cutive Mono', monospace;
-    overflow: visible;
+  text-align: center;
+  font-family: "Cutive Mono", monospace;
+  overflow: visible;
 }
 
-
-#card h1{
-    font-size: 250%;
+#card h1 {
+  font-size: 250%;
 }
 
-#card p{
-    font-size: 150%;
+#card p {
+  font-size: 150%;
 }
 
 #socials {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 5.5vh;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5.5vh;
 }
 
 .fab {
-    font-size: 30px;
-    width: 50px;
-    text-align: end;
-    text-decoration: none;
-    margin: 5px 2px;
-    transition: 1s;
+  font-size: 30px;
+  width: 50px;
+  text-align: end;
+  text-decoration: none;
+  margin: 5px 2px;
+  transition: 1s;
 }
 
 .fas {
-    font-size: 30px;
-    width: 50px;
-    text-align: end;
-    text-decoration: none;
-    margin: 5px 2px;
-    transition: 1s;
+  font-size: 30px;
+  width: 50px;
+  text-align: end;
+  text-decoration: none;
+  margin: 5px 2px;
+  transition: 1s;
 }
 
 .fab:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .fas:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .fa-github {
-    color: black;
-    font-size: 36px;
+  color: black;
+  font-size: 36px;
 }
 
 .fa-google {
-    color: black;
-    font-size: 36px;
+  color: black;
+  font-size: 36px;
 }
 
 .fa-discord {
-    color: black;
-    font-size: 36px;
+  color: black;
+  font-size: 36px;
 }
 
 .fa-cat {
-    color: black;
-    font-size: 36px;
+  color: black;
+  font-size: 36px;
 }
 
-.fa-phone {
-    color: black;
-    font-size: 36px;
+.fa-linkedin {
+  color: black;
+  font-size: 36px;
 }
 
-#canvas1{
-    position:absolute;
-    left:0;
-    top:0;
-    z-index:-1;
-    background: radial-gradient(#2c2f33, #23272a);
+#canvas1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background: #2c2f33 /*radial-gradient(#2c2f33, #23272a)*/;
 }
 
 @media only screen and (max-width: 768px) {
-    .fab {
-        padding-top: 0.2in;
-    }
-    .fas {
-        padding-top: 0.2in;
-    }
-    #socials {
-        margin-top: 5.5vh;
-    }
+  .fab {
+    padding-top: 0.2in;
   }
+  .fas {
+    padding-top: 0.2in;
+  }
+  #socials {
+    margin-top: 5.5vh;
+  }
+}

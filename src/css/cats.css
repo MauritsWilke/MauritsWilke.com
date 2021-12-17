@@ -1,0 +1,98 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Cutive Mono', monospace;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+
+	display: grid;
+	place-items: center;
+}
+
+#container {
+	width: auto;
+	height: 70vh;
+
+	display: flex;
+	justify-content: space-between;
+	gap: 4vw;
+}
+
+.imageSlideshow {
+	padding: 7px;
+	background-color: rgba(153, 170, 181, 0.8);
+	border-radius: 7px;
+
+	width: auto;
+	height: auto;
+	max-height: 54vh;
+}
+
+.imageSlideshow .imgBox {
+	width: 30vw;
+	height: 50vh;
+
+ 	position: relative;
+ 	display: flex;
+ 	overflow: hidden;
+}
+
+.imageSlideshow .imgBox img {
+	object-fit: cover;
+	object-position: center;
+
+	pointer-events: none;
+ 	user-select: none;
+
+	width: 100%;
+	height: 100%;
+
+	border-radius: 7px;
+}
+
+p {
+	font-size: 2em;
+	font-weight: 800;
+	color: black;
+
+	text-align: center;
+}
+
+#canvas1 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	background: #2c2f33 /*radial-gradient(#2c2f33, #23272a)*/;
+}
+
+@media only screen and (max-width: 595px) {
+
+	:root {
+		--remove: 1; 
+	}
+
+	#container {
+		width: 90vw;
+		height: 70vh;
+	}
+
+	.imageSlideshow {
+		width: 90vw;
+		height: auto;
+		max-height: 55vh;
+	}
+
+	.imageSlideshow .imgBox {
+		width: auto;
+	}
+
+	.imageSlideshow:last-child {
+		display: none;
+		position: absolute;
+		visibility: none;
+	}
+}

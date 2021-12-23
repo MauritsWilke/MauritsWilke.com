@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Magic Squares</title>
+</head>
+
+<body>
+	<script defer src="./index.js"></script>
+
+	<form method="post" id="num">
+		<input type="number" placeholder="Enter a number" max="100">
+		<button type="submit">Generate!</button>
+		<p id="sum">Sum: 15</p>
+		<p></p>
+	</form>
+
+	<table id="magicSquare"></table>
+</body>
+
+<style>
+	p {
+		display: inline
+	}
+
+	table,
+	th,
+	td {
+		margin-top: 10px;
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+</style>
+
+</html>

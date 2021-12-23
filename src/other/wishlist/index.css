@@ -1,0 +1,138 @@
+* {
+	padding: 0;
+	margin: 0;
+
+ 	font-family: 'Roboto', sans-serif; 
+	font-weight: thin;
+}
+
+:root {
+	font-size: 20px;
+	--text-colour: #3C493F;
+	--card-colour: #7E8D85;
+	--image-background: #6d7872;
+}
+
+body {
+	background-color: #d9e0dd;
+}
+
+#container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 1em;
+}
+
+#container h1 {
+	margin-top: 0.5em;
+	font-size: 2rem;
+	color: var(--text-colour);
+}
+
+/* CARD */
+
+.card {
+	/* width: 75vw;
+	height: 50vh;
+	max-width: 281.5px;
+	max-height: 333.5px; */
+
+	width: 75vw;
+	max-width: 281.5px;
+	height: 333.5px;
+
+	margin-top: 1em;
+	padding: 0.5em;
+
+	border-radius: 10px;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 3.5fr 0.8fr 2fr 0.3fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px; 
+
+	overflow: hidden;
+
+	background-color: var(--card-colour);
+	color: var(--text-colour);
+}
+
+.card #imageHolder {
+	width: 100%;
+
+	grid-row: 1;
+	
+	border-radius: 10px;
+
+	overflow: hidden;
+
+	background-color: var(--image-background);
+
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.card #imageHolder img {
+    min-width: 100%;
+    min-height: 100%;
+
+	pointer-events: none;
+	user-select: none;
+}
+
+.card #imageHolder:hover {
+	display: flex;
+	justify-content: center;
+}
+
+.card #imageHolder:hover img {
+	height: 100%;
+	width: auto;
+	min-width: 0px;
+    min-height: 0px;
+}
+
+.card #title {
+	grid-row: 2;
+	
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.card #title :link {
+	text-decoration: none;
+
+	text-decoration: underline;
+	color: var(--text-colour);
+}
+
+.card #title :visited {
+	text-decoration: none;
+	color: var(--text-colour);
+}
+
+.card #description {
+	grid-row: 3;
+	height: 4.8em;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+  	-webkit-line-clamp: 4;
+  	-webkit-box-orient: vertical;  
+}
+
+.card #price {
+	grid-row: 4;
+}
+
+@media screen and (max-device-width: 720px) {
+	:root {
+		font-size: 20px;
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"items": [
+		{
+			"name": "Helicarrier - Lego",
+			"description": "Lego Marvel helicarrier. Set only available through resellers",
+			"url": "https://store.bricklink.com/BosS?itemID=274527474#/shop",
+			"price": "314.99",
+			"image": "http://img.bricklink.com/ItemImage/SN/0/76042-1.png"
+		},
+		{
+			"name": "The Daily Bugle",
+			"description": "Lego Daily Bugle from Spider-Man (has daredevil minifigure :D)",
+			"url": "https://www.lego.com/en-us/product/daily-bugle-76178",
+			"price": "299.99",
+			"image": "https://live.staticflickr.com/65535/51224595567_33fb48bc7c_b.jpg"
+		},
+		{
+			"name": "Lego Marvel Minifigures",
+			"description": "Lego Marvel Minifigures",
+			"url": "https://www.lego.com/nl-nl/product/lego-minifigures-marvel-studios-71031",
+			"price": "3.99",
+			"image": "https://www.lego.com/cdn/cs/set/assets/blt5898dfba986e2116/71031.jpg?fit=bounds&format=jpg&quality=80&width=800&height=800&dpr=1"
+		}
+	]
+}

@@ -4,7 +4,7 @@
 const container = document.getElementById("container");
 
 // THIS IS TOTALLY NOT STRAIGHT OUT OF THE DOCS
-const wishlist = "http://127.0.0.1:5501/src/other/wishlist/wishlist.json";
+const wishlist = "https://mauritswilke.com/other/wishlist/wishlist.json";
 let request = new XMLHttpRequest();
 request.open('GET', wishlist);
 request.responseType = 'json';

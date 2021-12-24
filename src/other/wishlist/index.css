@@ -73,7 +73,7 @@ body {
 	display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .card #imageHolder img {
@@ -131,8 +131,46 @@ body {
 	grid-row: 4;
 }
 
-@media screen and (max-device-width: 720px) {
+@media screen and (min-width: 810px) {
 	:root {
 		font-size: 20px;
 	}
+
+	#container {
+		margin-bottom: 1.2em;
+	}
+
+	.card {
+		width: 80vw;
+		max-width: 725px;
+		height: 200px;
+
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		grid-template-rows: 0.8fr 3fr 0.3fr; 
+		margin-top: 1.2em;
+	}
+
+	.card #title {
+		grid-row: 1;
+		grid-column: 1;
+	}
+
+	.card #imageHolder {
+		grid-column: 2;
+		grid-row: 1/4;
+	}
+
+	.card #imageHolder img {
+		overflow: hidden;
+	}
+
+	.card #description {
+		grid-row: 2
+	}
+
+	.card #price {
+		grid-row: 3;
+	}
+
 }

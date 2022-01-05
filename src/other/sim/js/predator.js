@@ -8,9 +8,10 @@ class Predator extends Blob {
 		this.notEaten = 0;
 		this.maxNotEaten = 750;
 		this.size = 7;
+		this.colour = "#eb4034";
 
 		this.genomes = {
-			speed: 2,
+			speed: 1.4,
 		}
 	}
 

@@ -97,7 +97,6 @@
   left: 0;
   top: 0;
   z-index: -1;
-  background: #2c2f33 /*radial-gradient(#2c2f33, #23272a)*/;
 }
 
 @media only screen and (max-width: 768px) {

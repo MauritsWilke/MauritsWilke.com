@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
-canvas.width = document.documentElement.clientWidth;
-canvas.height = document.documentElement.clientHeight;
+canvas.width = innerWidth;
+canvas.height = innerHeight;
 canvas.style.background = "#011627";
 window.addEventListener('resize', () => {
 	[canvas.width, canvas.height] = [innerWidth, innerHeight];
@@ -115,3 +115,6 @@ function update() {
 init();
 animate();
 document.body.height = window.innerHeight;
+document.body.width = window.innerWidth;
+
+window.onload = () => { if (document.location.toString().includes("noCard")) document.getElementById('container').remove() };

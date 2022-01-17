@@ -23,7 +23,7 @@ root {
 #noScript p {
 	font-family: "Cutive Mono", monospace;
 	font-weight: 700;
-	font-size: clamp(1em, 2vw, 100vw);
+	font-size: clamp(1em, 10em, 2vw);
 	color: #02477d;
 
 	margin: 5px;

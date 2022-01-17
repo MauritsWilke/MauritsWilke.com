@@ -24,21 +24,21 @@ let mouse = {
 	lastMoved: 0
 }
 
-window.addEventListener('mousemove', (event) => [mouse.x, mouse.y, mouse.lastMoved] = [event.pageX, event.pageY, Date.now()]);
+window.addEventListener('mousemove', (event) => { if (!event.shiftKey) [mouse.x, mouse.y, mouse.lastMoved] = [event.pageX, event.pageY, Date.now()] });
 window.addEventListener('mouseout', () => [mouse.x, mouse.y] = [null, null]);
-window.addEventListener('dblclick', (event) => {
+['dblclick', 'touchstart'].forEach(e => window.addEventListener(e, (event) => {
+	let [posX, posY] = [0, 0]
+	if (event.type === "touchstart") {
+		const evt = (typeof event.originalEvent === 'undefined') ? event : event.originalEvent;
+		const touch = evt.touches[0] || evt.changedTouches[0];
+		[posX, posY] = [touch.pageX, touch.pageY]
+	} else { [posX, posY] = [event.pageX, event.pageY] }
 	particles.forEach(particle => {
-		if (Math.hypot(particle.pos[0] - event.pageX, particle.pos[1] - event.pageY) < mouse.radius * 3) {
-			particle.vel[1] *= 4.5;
-			particle.vel[0] = Math.atan2(particle.pos[1] - event.pageY, particle.pos[0] - event.pageX);
+		if (Math.hypot(particle.pos[0] - posX, particle.pos[1] - posY) < mouse.radius * 3) {
+			particle.vel = [Math.atan2(particle.pos[1] - posY, particle.pos[0] - posX), 4.5]
 		}
 	})
-})
-window.addEventListener('touchmove', (event) => {
-	const evt = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
-	const touch = evt.touches[0] || evt.changedTouches[0];
-	[mouse.x, mouse.y] = [touch.pageX, touch.pageY]
-})
+}));
 
 const random = (min, max) => Math.random() * (max - min) + min;
 class Particle {
@@ -89,7 +89,6 @@ class Particle {
 		})
 	}
 }
-
 
 function init() {
 	particles = new Set();

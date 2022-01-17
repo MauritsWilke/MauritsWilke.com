@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Screen size and User Agent</title>
+</head>
+
+<body>
+	<noscript>sorry, requires JS</noscript>
+	<h1>Just click the screen</h1>
+	<div id="data">
+		<p id="userAgent">user agent</p>
+		<p id="screenSize">screen size</p>
+	</div>
+
+	<script>
+		document.getElementById('userAgent').innerText = navigator.userAgent || "Failed to get your user agent"
+		document.getElementById('screenSize').innerText = `${window.screen.height} x ${window.screen.width}`;
+		document.addEventListener('click', () => navigator.clipboard.writeText(document.getElementById("data").innerText));
+	</script>
+</body>
+
+</html>

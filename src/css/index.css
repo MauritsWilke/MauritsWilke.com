@@ -1,12 +1,12 @@
 root {
 	--text-colour: #011627;
+	font-size: 20px;
 }
 
 * {
 	margin: 0px;
 	padding: 0px;
 	user-select: none;
-	font-size: 20px;
 }
 
 #noScript {
@@ -32,87 +32,64 @@ root {
 .container {
 	display: flex;
 	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
+
 	align-content: center;
+	align-items: center;
+
+	justify-content: space-around;
+
 	height: 100vh;
-	z-index: 0;
 }
 
 #card {
-	height: 2in;
-	width: 3.5in;
-	padding: 10px;
+	width: clamp(2in, 3.5in, 85vw);
+	height: calc(100vw * 0.45);
+	max-height: 2in;
 
 	background-color: rgba(153, 170, 181, 0.8);
 	border-radius: 7px;
 
 	text-align: center;
 	font-family: "Cutive Mono", monospace;
-	overflow: visible;
 
-	color: var(--text-colour, #011627);
+	padding: 0.5rem;
+
+	color:  var(--text-colour, #011627);
 }
 
 #card h1 {
-	font-size: 2em;
+	font-size: 2.5rem;
 }
 
 #card p {
-	font-size: 1.5em;
+	font-size: 2rem;
 }
 
 #socials {
 	display: flex;
 	justify-content: space-evenly;
-	margin-top: 5.5vh;
+	margin-top: 10%;
 }
 
-.fab {
+[class*="fa"]{
 	font-size: 1.5em;
 	width: 50px;
 	text-align: end;
 	text-decoration: none;
 	margin: 5px 2px;
 	transition: 1s;
-}
-.fab:hover {
-	opacity: 0.7;
-}
 
-.fas {
-	font-size: 1.5em;
-	width: 50px;
-	text-align: end;
-	text-decoration: none;
-	margin: 5px 2px;
-	transition: 1s;
-}
-.fas:hover {
-	opacity: 0.7;
-}
-
-[class*="fa-"] {
 	color: var(--text-colour, #011627);
 	font-size: 1.8em;
 }
 
-#canvas1 {
+[class*="fa"]:hover {
+	opacity: 0.7;
+}
+
+canvas {
 	position: absolute;
 	left: 0;
 	top: 0;
 	z-index: -1;
 }
-
-/* @media only screen and (max-width: 768px) {
-	.fab {
-		padding-top: 0.2in;
-	}
-	.fas {
-		padding-top: 0.2in;
-	}
-	#socials {
-		margin-top: 5.5vh;
-	}
-} */

@@ -28,23 +28,49 @@
 	<!-- Ios Support because ios -->
 	<link rel="apple-touch-icon" href="icons/apple/android-launchericon-96-96.png">
 	<meta name="apple-mobile-web-app-status-bar" content="#7289da">
-
 </head>
 
 <body>
 	<canvas id="canvas1"></canvas>
 	<script src="./js/main.js"></script>
+	<noscript>
+		<style>
+			[class*="fa-"]:nth-child(1)::before {
+				content: "🐙"
+			}
+
+			[class*="fa-"]:nth-child(2)::before {
+				content: "💬"
+			}
+
+			[class*="fa-"]:nth-child(3)::before {
+				content: "📧"
+			}
+
+			[class*="fa-"]:nth-child(4)::before {
+				content: "🐱"
+			}
+
+			[class*="fa-"]:nth-child(5)::before {
+				content: "💼"
+			}
+		</style>
+		<div id="noScript">
+			<p>This background is so much cooler with JavaScript enabled!</p>
+		</div>
+	</noscript>
+
 
 	<div class="container">
 		<div id="card">
 			<h1>Maurits Wilke</h1>
 			<p>Hobby Developer</p>
 			<div id="socials">
-				<a href="https://www.github.com/MauritsWilke" class="fab fa-github"></a>
+				<a href="https://www.github.com/MauritsWilke" class="fab fa-github fa"></a>
 				<a href="https://discordapp.com/users/378874450105466880/" class="fab fa-discord"></a>
-				<a href="mailto:mauritswilke@gmail.com" class="fab fa-google"></a>
-				<a href="./html/cats.html" class="fas fa-cat"></a>
-				<a href="https://www.linkedin.com/in/mauritswilke" class="fab fa-linkedin"></a>
+				<a href="mailto:mauritswilke@gmail.com" class="fab fa-google fa"></a>
+				<a href="./html/cats.html" class="fas fa-cat fa"></a>
+				<a href="https://www.linkedin.com/in/mauritswilke" class="fab fa-linkedin fa"></a>
 			</div>
 		</div>
 	</div>

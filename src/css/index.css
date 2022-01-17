@@ -1,112 +1,118 @@
+root {
+	--text-colour: #011627;
+}
+
 * {
-  margin: 0px;
-  padding: 0px;
+	margin: 0px;
+	padding: 0px;
+	user-select: none;
+	font-size: 20px;
+}
+
+#noScript {
+	position: absolute;
+	z-index: -1;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--text-colour,#011627);
+
+	display: flex;
+	align-items: flex-end;
+}
+
+#noScript p {
+	font-family: "Cutive Mono", monospace;
+	font-weight: 700;
+	font-size: clamp(1em, 2vw, 100vw);
+	color: #02477d;
+
+	margin: 5px;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  height: 100vh;
-  z-index: 0;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	height: 100vh;
+	z-index: 0;
 }
 
 #card {
-  height: 2in;
-  width: 3.5in;
-  padding: 10px;
+	height: 2in;
+	width: 3.5in;
+	padding: 10px;
 
-  background-color: rgba(153, 170, 181, 0.8);
-  border-radius: 7px;
+	background-color: rgba(153, 170, 181, 0.8);
+	border-radius: 7px;
 
-  text-align: center;
-  font-family: "Cutive Mono", monospace;
-  overflow: visible;
+	text-align: center;
+	font-family: "Cutive Mono", monospace;
+	overflow: visible;
+
+	color: var(--text-colour, #011627);
 }
 
 #card h1 {
-  font-size: 250%;
+	font-size: 2em;
 }
 
 #card p {
-  font-size: 150%;
+	font-size: 1.5em;
 }
 
 #socials {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 5.5vh;
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 5.5vh;
 }
 
 .fab {
-  font-size: 30px;
-  width: 50px;
-  text-align: end;
-  text-decoration: none;
-  margin: 5px 2px;
-  transition: 1s;
+	font-size: 1.5em;
+	width: 50px;
+	text-align: end;
+	text-decoration: none;
+	margin: 5px 2px;
+	transition: 1s;
+}
+.fab:hover {
+	opacity: 0.7;
 }
 
 .fas {
-  font-size: 30px;
-  width: 50px;
-  text-align: end;
-  text-decoration: none;
-  margin: 5px 2px;
-  transition: 1s;
+	font-size: 1.5em;
+	width: 50px;
+	text-align: end;
+	text-decoration: none;
+	margin: 5px 2px;
+	transition: 1s;
 }
-
-.fab:hover {
-  opacity: 0.7;
-}
-
 .fas:hover {
-  opacity: 0.7;
+	opacity: 0.7;
 }
 
-.fa-github {
-  color: black;
-  font-size: 36px;
-}
-
-.fa-google {
-  color: black;
-  font-size: 36px;
-}
-
-.fa-discord {
-  color: black;
-  font-size: 36px;
-}
-
-.fa-cat {
-  color: black;
-  font-size: 36px;
-}
-
-.fa-linkedin {
-  color: black;
-  font-size: 36px;
+[class*="fa-"] {
+	color: var(--text-colour, #011627);
+	font-size: 1.8em;
 }
 
 #canvas1 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
 }
 
-@media only screen and (max-width: 768px) {
-  .fab {
-    padding-top: 0.2in;
-  }
-  .fas {
-    padding-top: 0.2in;
-  }
-  #socials {
-    margin-top: 5.5vh;
-  }
-}
+/* @media only screen and (max-width: 768px) {
+	.fab {
+		padding-top: 0.2in;
+	}
+	.fas {
+		padding-top: 0.2in;
+	}
+	#socials {
+		margin-top: 5.5vh;
+	}
+} */

@@ -43,6 +43,7 @@ root {
 
 #card {
 	width: clamp(2in, 3.5in, 85vw);
+	min-width: 300px;
 	height: calc(100vw * 0.45);
 	max-height: 2in;
 
@@ -58,11 +59,11 @@ root {
 }
 
 #card h1 {
-	font-size: 2.5rem;
+	font-size: 2.3rem;
 }
 
 #card p {
-	font-size: 2rem;
+	font-size: 1.7rem;
 }
 
 #socials {

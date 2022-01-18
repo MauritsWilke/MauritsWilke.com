@@ -1,3 +1,18 @@
+const random = (min, max) => Math.random() * (max - min) + min;
+const urlParams = new URLSearchParams(window.location.search);
+const settings = {
+	mouseDivider: 100,
+	connnectionRadius: 120,
+	particleDivider: 9000,
+	minParticleSize: 2,
+	maxParticleSize: 5,
+	particleSpeed: 0.8,
+	maxParticles: 500,
+	noCard: urlParams.has('noCard'),
+	noMouse: urlParams.has('noMouse'),
+	noClick: urlParams.has('noClick'),
+	colour: urlParams.get('colour') === "random" ? `rgb(${Math.floor(random(0, 255))}, ${Math.floor(random(0, 255))}, ${Math.floor(random(0, 255))})` : urlParams.get('colour')
+}
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
 canvas.width = document.documentElement.clientWidth || document.body.clientWidth;;
@@ -5,48 +20,42 @@ canvas.height = document.documentElement.clientHeight || document.body.clientHei
 canvas.style.background = "#011627";
 window.addEventListener('resize', () => {
 	[canvas.width, canvas.height] = [innerWidth, innerHeight];
-	mouse.radius = (canvas.height / mouseDivider) * (canvas.width / mouseDivider);
+	mouse.radius = (canvas.height / settings.mouseDivider) * (canvas.width / settings.mouseDivider);
 	update();
 });
 
 let particles = new Set();
-const mouseDivider = 100;
-const connnectionRadius = 120;
-const particleDivider = 9000;
-const minParticleSize = 2;
-const maxParticleSize = 5;
-const particleSpeed = 0.8;
-const maxParticles = 500;
 let mouse = {
 	x: null,
 	y: null,
-	radius: (canvas.height / mouseDivider) * (canvas.width / mouseDivider),
+	radius: (canvas.height / settings.mouseDivider) * (canvas.width / settings.mouseDivider),
 	lastMoved: 0
 }
 
-window.addEventListener('mousemove', (event) => { if (!event.shiftKey) [mouse.x, mouse.y, mouse.lastMoved] = [event.pageX, event.pageY, Date.now()] });
-window.addEventListener('mouseout', () => [mouse.x, mouse.y] = [null, null]);
-['dblclick', 'touchstart'].forEach(e => window.addEventListener(e, (event) => {
-	let [posX, posY] = [0, 0]
-	if (event.type === "touchstart") {
-		const evt = (typeof event.originalEvent === 'undefined') ? event : event.originalEvent;
-		const touch = evt.touches[0] || evt.changedTouches[0];
-		[posX, posY] = [touch.pageX, touch.pageY]
-	} else { [posX, posY] = [event.pageX, event.pageY] }
-	particles.forEach(particle => {
-		if (Math.hypot(particle.pos[0] - posX, particle.pos[1] - posY) < mouse.radius * 3) {
-			particle.vel = [Math.atan2(particle.pos[1] - posY, particle.pos[0] - posX), 4.5]
-		}
-	})
-}));
+if (!settings.noMouse) window.addEventListener('mousemove', (event) => { if (!event.shiftKey) [mouse.x, mouse.y, mouse.lastMoved] = [event.pageX, event.pageY, Date.now()] });
+if (!settings.noMouse) window.addEventListener('mouseout', () => [mouse.x, mouse.y] = [null, null]);
+if (!settings.noClick) {
+	['dblclick', 'touchstart'].forEach(e => window.addEventListener(e, (event) => {
+		let [posX, posY] = [0, 0]
+		if (event.type === "touchstart") {
+			const evt = (typeof event.originalEvent === 'undefined') ? event : event.originalEvent;
+			const touch = evt.touches[0] || evt.changedTouches[0];
+			[posX, posY] = [touch.pageX, touch.pageY]
+		} else { [posX, posY] = [event.pageX, event.pageY] }
+		particles.forEach(particle => {
+			if (Math.hypot(particle.pos[0] - posX, particle.pos[1] - posY) < mouse.radius * 3) {
+				particle.vel = [Math.atan2(particle.pos[1] - posY, particle.pos[0] - posX), 4.5]
+			}
+		})
+	}));
+}
 
-const random = (min, max) => Math.random() * (max - min) + min;
 class Particle {
 	constructor(pos, vel, size, colour) {
 		this.pos = pos || [random(0, canvas.width), random(0, canvas.height)];
-		this.vel = vel || [random(0, Math.PI * 2), particleSpeed];
-		this.size = size || random(minParticleSize, maxParticleSize);
-		this.colour = colour || "rgb(46, 196, 182)";
+		this.vel = vel || [random(0, Math.PI * 2), settings.particleSpeed];
+		this.size = size || random(settings.minParticleSize, settings.maxParticleSize);
+		this.colour = colour || settings.colour || "rgb(46, 196, 182)";
 		this.velStrive = this.vel[1];
 	}
 
@@ -62,7 +71,7 @@ class Particle {
 		if (this.vel[1] < this.velStrive) this.vel[1] = this.velStrive;
 		const displacement = 10;
 		const distance = Math.hypot(mouse.x - this.pos[0], mouse.y - this.pos[1]);
-		if (mouse.x && Date.now() - mouse.lastMoved < 300 && distance < mouse.radius + this.size) {
+		if (!settings.noMouse && mouse.x && Date.now() - mouse.lastMoved < 300 && distance < mouse.radius + this.size) {
 			if (mouse.x < this.pos[0] && this.pos[0] < canvas.width - this.size * 10) this.pos[0] += displacement;
 			if (mouse.x > this.pos[0] && this.pos[0] > this.size * 10) this.pos[0] -= displacement;
 			if (mouse.y < this.pos[1] && this.pos[1] < canvas.height - this.size * 10) this.pos[1] += displacement;
@@ -79,8 +88,8 @@ class Particle {
 	connect() {
 		particles.forEach(particle => {
 			const distance = Math.hypot(particle.pos[1] - this.pos[1], particle.pos[0] - this.pos[0])
-			if (distance < connnectionRadius) {
-				ctx.strokeStyle = this.colour.replace(")", `, ${1 - distance / connnectionRadius})`);
+			if (distance < settings.connnectionRadius) {
+				ctx.strokeStyle = this.colour.replace(")", `, ${1 - distance / settings.connnectionRadius})`);
 				ctx.beginPath();
 				ctx.moveTo(this.pos[0], this.pos[1]);
 				ctx.lineTo(particle.pos[0], particle.pos[1]);
@@ -92,8 +101,8 @@ class Particle {
 
 function init() {
 	particles = new Set();
-	let numberOfParticles = Math.round((canvas.height * canvas.width) / particleDivider);
-	while (particles.size < numberOfParticles && particles.size <= maxParticles) particles.add(new Particle())
+	let numberOfParticles = Math.round((canvas.height * canvas.width) / settings.particleDivider);
+	while (particles.size < numberOfParticles && particles.size <= settings.maxParticles) particles.add(new Particle())
 }
 
 function animate() {
@@ -103,9 +112,9 @@ function animate() {
 }
 
 function update() {
-	const newAmount = Math.round((canvas.height * canvas.width) / particleDivider);
+	const newAmount = Math.round((canvas.height * canvas.width) / settings.particleDivider);
 	if (particles.size > newAmount) particles = new Set([...Array.from(particles)].slice(0, newAmount))
-	if (particles.size < newAmount) while (particles.size < newAmount && particles.size <= maxParticles) particles.add(new Particle())
+	if (particles.size < newAmount) while (particles.size < newAmount && particles.size <= settings.maxParticles) particles.add(new Particle())
 
 	particles.forEach(particle => {
 		if (particle.pos[0] + particle.size > canvas.width || particle.pos[0] - particle.size < 0 || particle.pos[1] + particle.size > canvas.height || particle.pos[1] - particle.size < 0) particle.pos = [random(0, canvas.width), random(0, canvas.height)]
@@ -117,4 +126,4 @@ animate();
 document.body.height = window.innerHeight;
 document.body.width = window.innerWidth;
 
-window.onload = () => { if (document.location.toString().includes("noCard")) document.getElementById('container').remove() };
+window.onload = () => { if (settings.noCard) document.getElementById('container').remove() };

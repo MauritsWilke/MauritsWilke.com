@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+canvas.width = document.documentElement.clientWidth || document.body.clientWidth;;
+canvas.height = document.documentElement.clientHeight || document.body.clientHeight;;
 canvas.style.background = "#011627";
 window.addEventListener('resize', () => {
 	[canvas.width, canvas.height] = [innerWidth, innerHeight];

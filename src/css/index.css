@@ -9,6 +9,10 @@ root {
 	user-select: none;
 }
 
+body {
+	overflow: hidden;
+}
+
 #noScript {
 	position: absolute;
 	z-index: -1;

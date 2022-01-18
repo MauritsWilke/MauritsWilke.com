@@ -1,0 +1,27 @@
+{
+    "name": "Maurits",
+    "fullName": "Maurits Wilke",
+    "site": "https://www.MauritsWilke.com",
+    "nativeLanguage": "Dutch",
+    "preferredLanguage": "English",
+    "favouriteColour": "#99DAAC",
+    "preferredProgrammingLanguage": "JavaScript",
+    "pets": {
+        "cats": [
+            {
+                "name": "Pippa",
+                "cuteness": 10
+            },
+            {
+                "name": "Olly",
+                "cuteness": 10
+            }
+        ],
+        "dogs": [
+            {
+                "name": "Fiep",
+                "cuteness": 8.5
+            }
+        ]
+    }
+}
